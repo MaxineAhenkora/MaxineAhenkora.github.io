@@ -1,0 +1,214 @@
+<html>
+
+<head>
+<H1><U>A Day In My Friend's Life</H1></U>
+<title>My Web Page</title>
+</head>
+
+<BODY BGCOLOR= LAVENDER TEXT= RED>
+
+<p>Hello, World!</p>
+
+<p>
+Today, she had <FONT SIZE= 4><b><i>only two classes<i></b></Font>. 
+
+<p>She had Philosophy in the morning and <Font color= green Size= 3><i>History is her last class</i></ FONT><br>
+
+<p>
+<font color="red">My friend really loves reading!</font>
+</body>
+
+<p>
+<font color="blue"><FONT SIZE =5>&copy; MAXINE AHENKORA</font>
+
+<p>
+<font color="gold"><FONT SIZE =7> &hearts; &hearts; &hearts; &hearts; &hearts; &hearts; &hearts;</font>
+
+
+<br>
+<font color="blue"><FONT SIZE =7> &clubs; &clubs; &clubs; &clubs; &clubs;  &clubs;  &clubs;</font>
+
+
+<p>
+<FONT SIZE =5><a href="https://www.mtholyoke.edu/"> Mount Holyoke College </a>
+
+<p>
+<FONT SIZE =5><a href="https://www.holyokemall.com/"> Holyoke Mall </a>
+
+<p>
+<ol>
+<li> Lecrae
+<li> Hulvey
+<li> KB
+<li> Wande
+</ol>
+
+
+<table style="border: 1px solid gray; width:50%;"> 
+  <tr>
+    <th>Sports</th>
+    <th>Animals</th>
+    <th>Countries</th>
+    <th>Poets</th>
+  </tr>
+  <tr>
+    <td>Soccer</td>
+    <td>Lion</td>
+    <td>Ghana</td>
+    <td>Emily Dickinson</td>
+  </tr>
+  <tr>
+    <td>Badminton</td>
+    <td>Kangaroo</td>
+    <td>South Africa</td>
+    <td>Emily Bronte</td>
+  </tr>
+<tr>
+    <td>Basketball</td>
+    <td>Zebra</td>
+    <td>Algeria</td>
+    <td>Lord Byron</td>
+  </tr>
+</table>
+
+
+<p>
+<img src="https://www.billboard.com/wp-content/uploads/2024/02/Messi-2023-billboard-1548.jpg?w=942&h=623&crop=1" width="10%">
+<audio controls>
+    <source src="sad-soul-chasing-a-feeling-185750.mp3" type="audio/mpeg">
+</audio>
+
+<p>
+<img src="Maxine.jpg" width="10%">
+<audio controls>
+    <source src="titanium-170190.mp3" type="audio/mpeg">
+</audio>
+
+
+<p>
+<video width="150" height="100" controls>
+  <source src="145320 (540p).mp4" type="video/mp4">
+</video>
+
+</html>
+
+<html>
+<body>      
+   
+    <div style="margin-left: auto; margin-right: auto; margin-top: 50px;
+    padding: 30px; width: 550px; font-size: 17px; font-family:'Segoe UI', sans-serif;">
+    Mina-Bot👧
+   
+   <div style=" margin-top:7px; padding: 30px; background-color: #E1F4FB;
+   border: 5px solid #8ec8df; border-radius: 30px;">
+
+    <form name="chatForm">
+        <p id="botSays">What is your name ? </p>
+        <br>         
+        <input type="text" name="userInput" >
+        <input type="button" value="Send" onClick="displayFeedback(this.form)">
+
+    </form>
+   </div>
+   </div>  
+
+<script>
+
+var counter=0;
+var totalQuestions=5;
+
+var myGraduationYear= 2027;
+var myMajor="psychology";
+
+var myfavArtist="hulvey";
+
+//create a list of the artists you are/ were interested in
+var favArtistList=["lecrae", "hulvey", "kb", "wande", "tedashi" ];
+
+//create a list of the majors you are/ were interested in
+var majorInterestedList=["psychology", "art history", "english", "politics", "data science"];
+
+var userName;
+
+    function displayFeedback(form) {
+
+        counter++;
+
+        var feedbackText="";
+        var newQuestionText="";
+
+        var userInput= form.userInput.value;
+
+        if (counter==1) {        
+            userName= userInput;
+            feedbackText="Hi, "+ userName+" ! " +"<br>Nice to meet you."+
+            " I am Maxine, a rising sophomore at Mount Holyoke College.";
+
+            newQuestionText="Do you also attend Mount Holyoke College ?";              
+        }
+
+        if (counter==2) {        
+            feedbackText="Woah, that's so cool."; 
+            newQuestionText="What are you majoring in ?";              
+        }
+
+        if (counter==3) {     
+            if (userInput.toLowerCase()== myMajor) feedbackText="Interesting! I might also major in "+ userInput+"."; 
+            
+            else {
+                feedbackText="I guess "+userInput+" must be a course you are very passionate about."+" I am planning on majoring in "+myMajor;
+                
+                //check if user's major is one the majors in your majorInterestedList 
+                for (let i = 0; i < majorInterestedList.length; i++) {      
+                    if (userInput.toLowerCase() == majorInterestedList[i]) {
+                        feedbackText=userInput+ " was one of the majors I wanted to pursue at Mount Holyoke College."+
+                        " However, I fell in love with "+myMajor+".";
+                    }    
+                }
+        }
+
+        newQuestionText="When are you graduating ?"; 
+        }
+
+        if (counter==4) {     
+            if (userInput== myGraduationYear) feedbackText="Yay! We will be graduating in the same year ! ";  
+            else if (userInput< myGraduationYear) feedbackText="Cool. You will be graduating before me."; 
+            else if (userInput> myGraduationYear) feedbackText="Aww, I will be graduating in "+ myGraduationYear+", a bit earlier than you.";
+            else feedbackText="Thanks for sharing. Our friendship is off to a good start!";  
+                  
+            newQuestionText="Who is your favorite artist ?"; 
+           
+        }
+        
+
+        if (counter==5) {     
+            if (userInput.toLowerCase()== myfavArtist) feedbackText="What a coincidence! I also love " + userInput+"."; 
+            
+            else {
+                feedbackText="I guess you must find "+userInput+" very interesting."+" I love listening to "+myfavArtist;
+                
+                //check if user's artist is one of the artists in your favArtistList
+                for (let a = 0; a < favArtistList.length; a++) {      
+                    if (userInput.toLowerCase() == favArtistList[a]) {
+                        feedbackText= userInput+ " is also one of my favorite artists."+
+                        " However, I usually prefer the songs of "+myfavArtist+".";
+                     }    
+                }
+        }
+        }
+        
+
+        //if you have reached the last question
+        if (counter>totalQuestions ) {
+            feedbackText=feedbackText+"<br><br>It was a pleasure to meet you, "+userName+"."+
+            "<br>Have a great day and enjor your weekend!";           
+        }
+      
+        //update the feedback and clear the input box
+        document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+        form.userInput.value=""; 
+    }
+
+</script>
+</body>
+</html>

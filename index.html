@@ -118,7 +118,7 @@ var counter=0;
 var totalQuestions=6;
 
 var myGraduationYear= 2025;
-var myMajor="film studies";
+var myFavcourse="film studies";
 
 var myfavArtist="hulvey";
 
@@ -126,7 +126,7 @@ var myfavArtist="hulvey";
 var favArtistList=["lecrae", "hulvey", "kb", "wande", "tedashi" ];
 
 //create a list of the majors you are/ were interested in
-var majorInterestedList=["film studies", "art history", "english", "statistics", "biology"];
+var FavcourseList=["film studies", "art history", "english", "statistics", "biology"];
 
 var userName;
 
@@ -149,20 +149,20 @@ var userName;
 
         if (counter==2) {        
             feedbackText="Woah, that's so cool."; 
-            newQuestionText="What are you majoring in ?";              
+            newQuestionText="What is your favorite course ?";              
         }
 
         if (counter==3) {     
-            if (userInput.toLowerCase()== myMajor) feedbackText="Interesting! I might also major in "+ userInput+"."; 
+            if (userInput.toLowerCase()== myFavcourse) feedbackText="Interesting! I also take "+ userInput+"."; 
             
             else {
-                feedbackText="I guess "+userInput+" must be a course you are very passionate about."+" I am planning on majoring in "+myMajor;
+                feedbackText="I guess "+userInput+" must be a course you are very passionate about."+" I am also planning on taking "+myMajor;
                 
-                //check if user's major is one the majors in your majorInterestedList 
-                for (let i = 0; i < majorInterestedList.length; i++) {      
-                    if (userInput.toLowerCase() == majorInterestedList[i]) {
-                        feedbackText=userInput+ " was one of the majors I wanted to pursue at Mount Holyoke College."+
-                        " However, I fell in love with "+myMajor+".";
+                //check if user's course is one the courses in your FavcourseList 
+                for (let i = 0; i < FavcourseListList.length; i++) {      
+                    if (userInput.toLowerCase() == FavcourseList[i]) {
+                        feedbackText=userInput+ " was one of the courses I wanted to take in Mount Holyoke College."+
+                        " However, I fell in love with "+myFavcourse+".";
                     }    
                 }
         }

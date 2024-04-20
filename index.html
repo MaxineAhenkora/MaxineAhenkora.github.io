@@ -92,3 +92,130 @@ Today, she had <FONT SIZE= 4><b><i>only two classes<i></b></Font>.
 
 </html>
 
+  <html>
+<body>      
+   
+    <div style="margin-left: auto; margin-right: auto; margin-top: 50px;
+    padding: 30px; width: 550px; font-size: 17px; font-family:'Segoe UI', sans-serif;">
+    Mina-Bot👧
+   
+   <div style=" margin-top:7px; padding: 30px; background-color: #E1F4FB;
+   border: 5px solid #8ec8df; border-radius: 30px;">
+
+    <form name="chatForm">
+        <p id="botSays">What is your name ? </p>
+        <br>         
+        <input type="text" name="userInput" >
+        <input type="button" value="Send" onClick="displayFeedback(this.form)">
+
+    </form>
+   </div>
+   </div>  
+
+<script>
+
+var counter=0;
+var totalQuestions=6;
+
+var myGraduationYear= 2025;
+var myMajor="film studies";
+
+var myfavArtist="hulvey";
+
+//create a list of the artists you are/ were interested in
+var favArtistList=["lecrae", "hulvey", "kb", "wande", "tedashi" ];
+
+//create a list of the majors you are/ were interested in
+var majorInterestedList=["film studies", "art history", "english", "statistics", "biology"];
+
+var userName;
+
+    function displayFeedback(form) {
+
+        counter++;
+
+        var feedbackText="";
+        var newQuestionText="";
+
+        var userInput= form.userInput.value;
+
+        if (counter==1) {        
+            userName= userInput;
+            feedbackText="Hi, "+ userName+" ! " +"<br>Nice to meet you."+
+            " I am Maxine, a rising junior at Smith College.";
+
+            newQuestionText="Do you also attend Smith College ?";              
+        }
+
+        if (counter==2) {        
+            feedbackText="Woah, that's so cool."; 
+            newQuestionText="What are you majoring in ?";              
+        }
+
+        if (counter==3) {     
+            if (userInput.toLowerCase()== myMajor) feedbackText="Interesting! I might also major in "+ userInput+"."; 
+            
+            else {
+                feedbackText="I guess "+userInput+" must be a course you are very passionate about."+" I am planning on majoring in "+myMajor;
+                
+                //check if user's major is one the majors in your majorInterestedList 
+                for (let i = 0; i < majorInterestedList.length; i++) {      
+                    if (userInput.toLowerCase() == majorInterestedList[i]) {
+                        feedbackText=userInput+ " was one of the majors I wanted to pursue at Mount Holyoke College."+
+                        " However, I fell in love with "+myMajor+".";
+                    }    
+                }
+        }
+
+           newQuestionText="When do you expect to graduate from Smith College ?"; 
+           }
+
+        
+        if (counter==4) {     
+            if (userInput== myGraduationYear) feedbackText="Yay! We will be graduating in the same year ! ";  
+            else if (userInput< myGraduationYear) feedbackText="Cool. You will be graduating before me."; 
+            else if (userInput> myGraduationYear) feedbackText="Aww, I will be graduating in "+ myGraduationYear+", a bit earlier than you.";
+            else feedbackText="Thanks for sharing. Our friendship is off to a good start!";  
+                  
+            newQuestionText="Who are your favorite artists ?";  
+        }
+
+       
+        if (counter==5) {        
+            feedbackText="That's nice.";  
+            
+            newQuestionText="Which artist do you like the most ?"; 
+        }
+        
+        
+        if (counter==6) {     
+            if (userInput.toLowerCase()== myfavArtist) feedbackText="What a coincidence! I also love " + userInput+"."; 
+            
+            else {
+                feedbackText="I guess you must find "+userInput+" very interesting."+" I love listening to "+myfavArtist;
+                
+                //check if user's artist is one of the artists in your favArtistList
+                for (let a = 0; a < favArtistList.length; a++) {      
+                    if (userInput.toLowerCase() == favArtistList[a]) {
+                        feedbackText= userInput+ " is also one of my favorite artists."+
+                        " However, I usually prefer the songs of "+myfavArtist+".";
+                     }    
+                }
+        }
+        }
+        
+
+        //if you have reached the last question
+        if (counter>totalQuestions ) {
+            feedbackText=feedbackText+"<br><br>It was a pleasure to meet you, "+userName+"."+
+            "<br>Have a great day and enjor your weekend!";           
+        }
+      
+        //update the feedback and clear the input box
+        document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+        form.userInput.value=""; 
+    }
+
+</script>
+</body>
+</html>
